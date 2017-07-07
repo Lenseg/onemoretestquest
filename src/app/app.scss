@@ -14,8 +14,10 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.content{
+.app-root{
   font-family: 'Comfortaa', cursive;
+}
+.content{
   color: color($colors, font);
 }
 .text-muted{
@@ -23,7 +25,7 @@
 }
 
 
-.toolbar{
+ion-header .toolbar{
   &-background{
     background: color($colors, primary, base);
     background: linear-gradient(to right, color($colors, primary, base) 0%, color($colors, danger) 100%);
@@ -36,7 +38,18 @@
 .bar-button{
   color: color($colors, primary, contrast);
 }
-
+.footer-button {
+  position: absolute;
+  bottom: .5em;
+  z-index: 1;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 2em;
+  line-height: 1em
+}
 #app{
   .monthview-datetable{
     .monthview-selected{
@@ -46,6 +59,11 @@
     .monthview-current{
       color: inherit;
     }
+    .monthview-primary-with-event{
+      background: inherit;
+      color: inherit;
+    }
+
     th,td{
       vertical-align: middle;
       position: relative;

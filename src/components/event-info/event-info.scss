@@ -12,8 +12,18 @@ event-info {
     color: color($colors, disabled, contrast);
     font-size: .8em;
     margin-bottom: .5em;
+    margin-right: 4em;
+    &:last-child{
+      margin-right: 0em;
+    }
     .icon{
       margin-right: .4em;
+    }
+  }
+  .event-intercations{
+    color: color($colors, primary, base);
+    .disabled{
+      color: color($colors, disabled, contrast);
     }
   }
   .description{
