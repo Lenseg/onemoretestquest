@@ -1,14 +1,46 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      <span text-capitalize> {{this.calendar.currentDate | date:'MMMM y'}} </span>
     </ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ng-template #template let-view="view" let-row="row" let-col="col">
+    {{view.dates[row*7+col].label}}
+    <span class="events">
+      <i class="event-pin" [ngStyle]="{'background-color' : event.pinColor }" *ngFor="let event of view.dates[row*7+col].events">
+      </i>
+    </span>
+  </ng-template>
+  <ng-template #templateInactive let-view="view" let-row="row" let-col="col">
+      {{view.dates[row*7+col].label}}
+  </ng-template>
+  <div>
+    <calendar
+      [currentDate]="calendar.currentDate"
+      [showEventDetail]="calendar.showEventDetail"
+      [eventSource]="eventSource"
+      [monthviewDisplayEventTemplate]="template"
+      [monthviewInactiveDisplayEventTemplate]="templateInactive"
+      (onTimeSelected)="onTimeSelected($event)"
+      step="30">
+    </calendar>
+  </div>
+  <ion-list no-lines>
+    <ion-item *ngFor="let event of currentEvents">
+      <event-info  [event]="event"></event-info>
+    </ion-item>
+  </ion-list>
 </ion-content>

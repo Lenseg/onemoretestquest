@@ -14,3 +14,66 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.content{
+  font-family: 'Comfortaa', cursive;
+  color: color($colors, font);
+}
+.text-muted{
+  color: color($colors, disabled, contrast);
+}
+
+
+.toolbar{
+  &-background{
+    background: color($colors, primary, base);
+    background: linear-gradient(to right, color($colors, primary, base) 0%, color($colors, danger) 100%);
+  }
+  &-title{
+    color: color($colors, primary, contrast);
+    text-align: center;
+  }
+}
+.bar-button{
+  color: color($colors, primary, contrast);
+}
+
+#app{
+  .monthview-datetable{
+    .monthview-selected{
+      background-color: color($colors, secondary);
+      color: inherit;
+    }
+    .monthview-current{
+      color: inherit;
+    }
+    th,td{
+      vertical-align: middle;
+      position: relative;
+      height: 3.3em;
+      font-size: .8em;
+      .events{
+        display: block;
+        max-width: 21px;
+        line-height: 5px;
+        text-align: left;
+        margin: 0 auto;
+        position: absolute;
+        top: 1.95em;
+        left: 0;
+        right: 0;
+      }
+      .event-pin{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin: 0 1px;
+      }
+    }
+    th{
+      font-weight: 400;
+      text-transform: capitalize;
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<!-- Generated template for the EventInfoComponent component -->
+<h3 class="header">
+  <a [href]="event.url">{{event.title}}</a>
+</h3>
+<ion-row class="tooltips">
+  <ion-col  class="tooltip" col-6 no-padding>
+    <ion-icon name="ios-clock-outline"></ion-icon>{{event.startTime | date:'d MMMM'}}
+  </ion-col>
+  <ion-col  class="tooltip" col-6 no-padding>
+    <ion-icon name="ios-location-outline"></ion-icon>{{event.location}}
+  </ion-col>
+</ion-row>
+<ion-row class="description">
+  {{event.description}}
+</ion-row>
+<a class="link" [href]="event.url">Хочу</a>

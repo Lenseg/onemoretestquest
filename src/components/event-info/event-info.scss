@@ -1,0 +1,31 @@
+event-info {
+  background: color($colors, secondary);
+  display: block;
+  padding: 1em;
+  border-radius: 15px;
+  white-space: normal;
+  .header{
+    font-size: 1em;
+    margin-bottom: .5em;
+  }
+  .tooltip{
+    color: color($colors, disabled, contrast);
+    font-size: .8em;
+    margin-bottom: .5em;
+    .icon{
+      margin-right: .4em;
+    }
+  }
+  .description{
+    color: color($colors, font);
+    line-height: 1.2em;
+    max-height: 4.8em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: .5em;
+  }
+  .link{
+    font-size: .8em;
+    margin-bottom: .5em;
+  }
+}
