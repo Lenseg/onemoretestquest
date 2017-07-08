@@ -57,6 +57,10 @@ ion-header .toolbar{
 }
 #app{
   .monthview-datetable{
+    .monthview-primary-with-event{
+      background: inherit;
+      color: inherit;
+    }
     .monthview-selected{
       background-color: color($colors, secondary);
       color: inherit;
@@ -64,11 +68,6 @@ ion-header .toolbar{
     .monthview-current{
       color: inherit;
     }
-    .monthview-primary-with-event{
-      background: inherit;
-      color: inherit;
-    }
-
     th,td{
       vertical-align: middle;
       position: relative;
