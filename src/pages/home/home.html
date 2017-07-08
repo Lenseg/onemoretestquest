@@ -39,11 +39,14 @@
         step="30">
       </calendar>
     </div>
-    <ion-list no-lines col-lg-6 no-padding>
-      <ion-item *ngFor="let event of currentEvents">
-        <event-info  [event]="event"></event-info>
-      </ion-item>
-    </ion-list>
+    <div col-lg-6 no-padding>
+      <h2 class="subheader">Детали</h2>
+      <ion-list no-lines no-padding>
+        <ion-item *ngFor="let event of currentEvents">
+          <event-info  [event]="event"></event-info>
+        </ion-item>
+      </ion-list>
+    </div>
   </ion-row>
 </ion-content>
   <button class="footer-button" ion-button round icon-only>
